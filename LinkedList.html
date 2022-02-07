@@ -1,0 +1,328 @@
+<html>
+    <body>
+        <script>
+
+
+            class Node {
+                constructor(value) {
+                    this.value = value;
+                    this.next = null;
+                }
+            }
+
+
+// const a = new Node('A');
+// const b = new Node('B');
+// const c = new Node('C');
+// const d = new Node('D');
+
+// a.next = b;
+// b.next = c;
+// c.next = d;
+
+
+
+//Add all values of the above linked list to an array and return the array
+
+// const addToArray = (head) => {
+//     let values = [];
+//     let current = head;
+//     while(current !== null) {     
+//         values.push(current.value);
+//         current = current.next; 
+//     }
+//     return values
+// }
+
+// console.log(addToArray(a))
+
+
+
+//Same problem but use recursive function
+
+//This can work when we are allowed to defined array outside of function
+
+// let values = [];
+// const addtoArrayRecursive = (head) => {
+//     if(head === null) return
+   
+//     values.push(head.value);
+//     addtoArrayRecursive(head.next)
+//     return values
+// }
+
+
+//this can work when we arent allowed to use any global scope variables but we are allowed to use a helper function or in other words 2 functions
+
+// const  addtoArrayRecursive = (head) => {
+//     const values = [];
+//     fillValues(head, values)
+//     return values
+// }
+
+// function fillValues(head, values) {
+//     if (head === null) return  //Inge namme sum or sub apdi enthe calculation um seyyele right? so we dont need to return 0 or anything. suppose inge namme 0 ve return panna athu array kulle final element ah 0 ve add pannidum. we dont want that
+//     values.push(head.value)
+//     fillValues(head.next, values)
+// }
+
+// console.log(addtoArrayRecursive(a))
+
+
+
+
+// const z = new Node(1);
+// const x = new Node(2);
+// const n = new Node(3);
+// const v = new Node(4);
+// const m = new Node(5);
+
+// z.next = x;
+// x.next = n;
+// n.next = v;
+// v.next = m;
+
+//add total sum of the above linked list and return the sum
+// const addSum = (head) => {
+//     let sum = 0
+//     let current = head
+//     while (current !== null) {
+//         sum += current.value
+//         current = current.next
+//     }
+//     return sum
+// }
+
+// console.log(addSum(z))
+
+
+//Same problem but use Recursive function
+
+
+//When we are allowed to use Global variable
+
+// let sum = 0
+// const addSumRecursive = (head) => {
+//     if(head === null) return
+
+//     sum += head.value
+//     addSumRecursive(head.next)
+//     return sum
+// }
+
+// console.log(addSumRecursive(z))
+
+//When we are allowed to use helper function 
+
+// const addSumRecursive = (head) => {   //inge let sum = 0 endu potutu athe vere function kulle maathi modify panne eala bcs its primitive data type. Only none primitive data types eh than namme apdi modify panlam
+//     if(head === null) return 0  //inge namme sum eh kandu pudikke porom right. So head === null aahekke anthe node empty ah irukkum. sum le or namme onde kootekke empty eh epdi represent pannuvom? 0 endu right? thats the idea here. namme return eh summa panna undefined eh or void eh koote eala endu solli inthe function pulaikkum. instead for something empty when we are doing sum or any the basic calculations we need to return 0
+//     return  head.value +  addSumRecursive(head.next)  //inge sure ah oru line le return irukku hardcoded ah without any conditio. so namme recursion function de value eh return panrethe paththi kavale pade thevelle (nothinhg like find the target problem. anthe problem le rendu basic condition um match aahati function etheyume return pannathu, thats why namme recursive function de return value ve anthe function le return panrom). Plus inthe function le sum panneke idaile return podeyum eala, it's syntax error. so basically recursive function ku inge namme return pode thevelle
+    
+// }
+// console.log(addSumRecursive(z))
+
+
+// console.log(p)
+
+
+// const z = new Node(1);
+// const x = new Node(2);
+// const n = new Node(3);
+// const v = new Node(4);
+// const m = new Node(5);
+
+// z.next = x;
+// x.next = n;
+// n.next = v;
+// v.next = m;
+
+
+    // const sum = (head) => {
+    //     let current = head;
+    //     let sum = 0;
+    //     while(current !== null) {
+    //         sum = sum + current.value;
+    //         current = current.next;
+    //     }
+    //     return sum;
+    // }
+        
+    
+
+    //You are given head of a linked list and a target number. Find if the target number exists in the linked list
+
+        //Normal method
+    
+    //     const find = (head, target) => {
+    //         while(head !== null) {
+    //           if(head.value === target) return true;
+    //            head = head.next;                    
+    //         }
+    //         return false;
+        
+    // }
+
+
+        //Recursive method
+
+    // const find = (head, target) => {
+    //     if (head === null) return false;
+    //     if (head.value === target) {
+    //         return true;
+    //     } return find(head.next, target);       //ithu return panre value eh namme main function le return pannum or undefined endu varum
+    //             //inthe function athukkulle irukkure rendu base case eyum check pannum athule etho ondu matchaana athu true or false eh return pannum right. main function le true or false return aahelena athu ondyum return panrelleya? look rendu basic conditionaum match aahati inthe fucntion basically etheyum return pannathu right. thats why we need to return whatever the recursive function returns. basically inthe find function athude 2 basic conditions um match aahati recursive condition de return value le thangi irukkum. Ippe etho oru moment etho oru recursive find fucntion le anthe 2 basic conditions le ondu match aahe pohuthu right? anthe function le ending le irukkure return find(head, target) engure recursive function de return valuie ku enthe effect ume irukkathu. bcs ath alrdy 2 basic conditions le ondu match aanathale alrdy return aahitu. So we are good
+    // }
+    
+
+    // You are given head and an index of a linked list. find the node in that paticular index
+
+
+        //Normal method
+
+            //UNNECESSARY ANSWER
+        // const find = (head, index) => {
+        //     let values = [];
+        //     for(let i=0; i <= index ; i++) {
+        //         if(head === null) return null;
+        //         values.push(head.value);
+        //         head = head.next;
+        //     }
+        //     return values[index];
+        // }
+
+            ////UNNECESSARY ANSWER
+        // const find = (head, index) => {
+        //     let count = 0;
+        //     while (count <= index) {
+        //         if(head === null) return null
+        //         if(count === index) return head.value
+        //         head = head.next;
+        //         count++;
+        //     }
+        // }
+
+
+            //PERFECT ANSWER
+        // const find = (head, index) => {
+        //     let count = 0;
+        //     while (head !== null) {
+        //         if(count === index) return head.value
+        //         head = head.next;
+        //         count++;
+        //     }
+        //     return null;
+        // }
+
+
+            //Recursive Method
+        // const find = (head, index) => {
+        //     if(head === null) return null
+        //     if(index === 0) return head.value;
+        //     return find(head.next, index-1)
+        // }
+
+        // console.log(find(z, 2));
+
+
+
+// const z = new Node(1);
+// const x = new Node(2);
+// const n = new Node(3);
+// const v = new Node(4);
+// const m = new Node(5);
+
+// z.next = x;
+// x.next = n;
+// n.next = v;
+// v.next = m;
+
+
+            //Reverse a link list and return it's head
+
+
+            //Normal method
+
+
+        //    const reverse = (head) => {      //linked list eh reverse panre enda core idea is to ovooru node reyum next ku athukku munthune node eh equal aakurethuthan.
+        //                                     // oovoru node reyum next peroperty ku namme athukku munthune node eh equal aakunethum namme default ah anthe node ku next ah irukkure node oode access eh ilakkom right. so that athe alrdy next engure variable le save panni vechikkurom. so that we can assign it to head later in our while loop to iterate through the whole linked list
+        //        let prev = null;             //ovvoru tharamum loop panneke varre head eh prev variable le save panni vechikirom so that aduthe loop le varre head oode next ku inthe prev value eh assign panlam.
+        //                                     //first ku prev ku null value kudukke kkaranm nammude first head loop kullale varekke athukku muthal enthe lopp um nadanthirukkathu right so prev ku null value eh kuduthu athe first head oode next ku assign panrom bcs oru linked list oode last node oode next null ku thane assign aahi irukkum        
+        //        while( head !== null) {
+        //            const next = head.next; //next = x   //next = n
+        //            head.next = prev; // z.next = null  // x.next = z
+        //            prev = head      // prev = z        // prev = x
+        //            head = next;  // head = x      // head = n
+        //        } return prev;
+        //    }
+
+        //     console.log(reverse(z))
+
+        //     //Recursive method
+
+        //     const reverseRecur = (head, prev = null) => {
+        //         if (head === null) return prev;
+        //         const next = head.next;
+        //         head.next = prev;
+        //         return reverseRecur(next, head)
+                
+        //     }
+
+
+        //     console.log(reverseRecur(z))
+
+
+
+            //Zipped list. 2 linked lists oode head will be given. and 2 leyum ovvoru node ah eduthu one after another link pannenum
+            //ex:- A-> B-> C, Q-> W-> R engure 2 linked lists tharappattal output should be A -> Q -> B -> W -> C-> R
+const z = new Node(1);
+const x = new Node(2);
+const n = new Node(3);
+const v = new Node(4);
+const m = new Node(5);
+
+z.next = x;
+x.next = n;
+n.next = v;
+v.next = m;
+
+
+const a = new Node('A');
+const b = new Node('B');
+const c = new Node('C');
+
+
+a.next = b;
+b.next = c;
+
+
+        
+
+
+                
+            zipped(z, a)
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

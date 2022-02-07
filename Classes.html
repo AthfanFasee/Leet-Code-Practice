@@ -1,0 +1,82 @@
+<html>
+<body>
+    <div id="counter">0</div>
+    <button onclick="increase()">Up</button>
+    <button onclick="decrease()">Down</button>
+    <script>
+        
+   
+    class User {
+        constructor(email, name="Athfan") {
+            this.email = email;
+            this.name = name
+            this.score = 0;
+            
+        }
+
+        alive = false
+
+        login() {
+            console.log(this.email, ' just logged in')
+            return this
+        }
+
+        logOut() {
+            console.log(this.email, ' just logged Out')
+        }
+        
+        updateScore() {
+            this.score++
+            console.log(this.email, 'score is now', this.score)
+            return this
+        }
+        
+    }
+
+
+    class Admin extends User {
+        deleteUser(user) {
+            users = users.filter(u => u !== user)
+        }
+    }
+
+    var userOne = new User('athfan@gmail.com');
+    var userTwo = new User('athfan159@gmail.com', 'Fasee');
+
+    const AdminOne = new Admin('Admin@gmail.com', 'Admin');
+    console.log(AdminOne)
+
+    let users = [userOne, userTwo]
+    console.log(users)
+
+    AdminOne.deleteUser(userOne)
+
+    console.log(users)
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</script>
+</body>
+
+
+</html>

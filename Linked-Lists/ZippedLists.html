@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const z = new Node(1);
+        const x = new Node(2);
+        const n = new Node(3);
+        const v = new Node(4);
+        const m = new Node(5);
+
+        z.next = x;
+        x.next = n;
+        n.next = v;
+        v.next = m;
+
+
+        const a = new Node('A');
+        const b = new Node('B');
+        const c = new Node('C');
+
+
+        a.next = b;
+        b.next = c;
+
+
+            //Nomral method
+
+            const zipped = (head1, head2) => {
+                const tail = head1;
+                const second = head2;
+                let count = 1;
+
+                while(head1.next === null || head2.next === null) {
+                   
+                    if(count % 2 === 0) {
+                         tail.next = head2
+                         head2 = head2.next
+                    }
+                     if(count % 2 !== 0) {
+                         tail.next = head1
+                         head1 = head1.next
+                     }
+                    
+                    tail = tail.next
+                    count++
+                }
+
+                //this will happen only after while loop ends(lets assume list 1 is bigger than list 2, so as soon as list 2' head2 hits null while loop wil lend and this code will be implmented after that to add the remaining of the nodes to the end of the new list we created)
+                if(head2.next === null) {
+                    tail.next = head1  //Nalla yosichu paatha tail.next ku naan inge remaining nodes eh on donda add panne thevelle. Tail.next ku just next head eh assign pannita anthe next head le anthe specific linked list ku uriye ella remainig nodes um link aahi irukkum right. in that way I can connect the whole remaining linked list to my new linked next(That's why we don't have to add if statements inside while loop)
+                         
+                } 
+
+                if(head1.next === null) {
+                    tail.next = head2
+                }
+                
+            }
+
+            zipped(z, a)
+
+    </script>
+</body>
+</html>

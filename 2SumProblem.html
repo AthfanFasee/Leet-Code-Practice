@@ -1,0 +1,82 @@
+<html>
+<body>
+    <input id="box" type="text">
+    <button onclick="showingtext()">click</button>
+    <div id="div">empty</div>
+    <script>
+        // const person = {
+        //     name: "Athfan",
+        //     age: 20
+        // }
+        // console.log(Object.entries(person))
+
+        // const arr = Object.entries(person)
+        
+
+
+        
+        // for(const [key, value] of Object.entries(person)) {
+        //     console.log(key)
+            
+        // }
+
+
+
+
+        // for(const [firstName, lastName] of [["Athfan", "Fasee"],["Humais", "Khan"]]) {
+        //     console.log(firstName, lastName)
+            
+        // }
+       
+
+        // const obj = {
+        //     1: 20,
+        //     10: "Athfan"
+        // }
+        // obj[10] = "Athfan"
+        // obj[1] = 100
+        // console.log(obj[1])
+        
+
+        // for( const[index, number] of nums.entries()) {
+        //     console.log(index, number)
+        // }
+        
+        const nums = [2, 7, 11, 15]
+      
+        const twoSum = (nums, target) => {
+            let storage = {}
+
+            for( let [index, num] of nums.entries()) {
+                if(storage[num] !== undefined) return [storage[num], index]
+                    storage[target-num] = index
+            
+            }
+            // let index = 0
+            // const answer = nums.map(num => {
+            
+            //         if(storage[num] !== undefined) return [storage[num], index]
+            //             storage[target-num] = index
+            //             index += 1
+            //         })
+            // return answer
+
+        }
+        console.log(twoSum([2, 7, 11, 15], 18))
+
+        const storage = {
+            16: 0,
+            11: 1,
+        }
+        
+
+      
+    </script>
+
+
+
+
+</body>
+
+
+</html>

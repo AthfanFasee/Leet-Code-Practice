@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Athfan
+    </div>
+    <script>
+        
+       class House {
+           constructor(color, size, area) {
+               this.color = color
+               this.size = size
+               this.area = area
+           }
+
+           isavailable() {
+               return 'yes'
+           }
+       }
+
+       const houseObject1 = new House('red', 50, 'kattankudy')
+       const houseObject2 = new House('green', 60, 'kattankudy')
+
+       console.log(houseObject1)
+       console.log(houseObject2.isavailable())
+
+
+
+
+       //Same Object using constructor function directly
+            let CreateHome = function (color, size, area) {
+               this.color = color
+               this.size = size
+               this.area = area
+           }
+      
+
+       const houseObject1 = new CreateHome('red', 50, 'kattankudy')
+       
+
+       console.log(houseObject1)
+       
+
+       //BOTH ARE SAME SHIT AND FOR REVISION WATCH KYLE AND Saved later video
+
+
+    </script>
+</body>
+</html>
